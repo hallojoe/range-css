@@ -1,0 +1,48 @@
+@import "_variables";
+@import "_functions.scss";
+
+@import "range.scss";
+
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 320px;
+}
+
+
+
+.card {
+  width: 50%;
+  padding:2rem;
+  position: relative;
+  margin: 0 auto 1rem auto;
+}
+textarea {
+  width: 100%;
+  height:100vh;
+  padding: 0;
+  margin: 0;
+}
+.flex {
+  display: flex;
+  width:100%;
+  > * {
+    padding:2rem;
+    width:100%;
+    display: block;
+  }
+}
+
+.range-wrap {
+
+  border-radius: 0rem;
+  border: 3px solid rgba($color: red, $alpha: 1);
+  box-shadow: 0 0  .5rem .2rem rgba($color: green, $alpha: .8);
+  display: flex;
+  overflow: visible;
+
+}

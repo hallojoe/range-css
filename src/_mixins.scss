@@ -1,0 +1,91 @@
+@mixin range-track {
+
+  // note: don't use box shadow on track it self. 
+  // this is because ms uses lower upper model
+ 
+  box-sizing: border-box;
+
+  width: var(--range-track-width);
+  height: var(--range-track-height);
+
+  background: var(--range-track-background);
+
+  border-style: var(--range-track-border-style);
+  border-color: var(--range-track-border-color);
+
+  border-top-width: var(--range-track-border-top-width);
+  border-right-width: var(--range-track-border-right-width);
+  border-bottom-width: var(--range-track-border-bottom-width);
+  border-left-width: var(--range-track-border-left-width);
+
+  border-top-left-radius: var(--range-track-border-radius-left);
+  border-bottom-left-radius: var(--range-track-border-radius-left);
+  border-top-right-radius: var(--range-track-border-radius-right);
+  border-bottom-right-radius: var(--range-track-border-radius-right);
+}
+
+@mixin range-thumb {
+
+  margin-top: var(--range-thumb-margin-top);
+
+  border: var(--range-thumb-border);
+
+  width: var(--range-thumb-width);
+
+  height: var(--range-thumb-height);
+
+  border-radius: var(--range-thumb-border-radius);
+
+  background: var(--range-thumb-background);
+
+  background-size: $range-thumb-background-size;
+
+  border-width: var(--range-thumb-border-width);
+  border-style: var(--range-thumb-border-style);
+  border-color: var(--range-thumb-border-color);
+
+  // box-shadow: var(--range-thumb-box-shadow);
+
+  box-sizing: border-box;
+
+  cursor: var(--range-thumb-cursor);
+
+
+  &:hover,
+  &:focus,
+  &:active {
+    // --range-thumb-background: var(--range-thumb-background-active);
+  }
+}
+
+@mixin range-thumb-ms($height, $width, $radius) {
+
+  width: $width;
+  height: $height;
+  border-radius: $range-track-border-radius;
+  background: $range-thumb-background;
+
+  background-size: $range-thumb-background-size;
+
+  border-width: $range-thumb-border-width;
+  border-style: $range-thumb-border-style;
+  border-color: $range-thumb-border-color;
+
+  margin:0 3px;
+
+  // margin-left:  $range-thumb-overflow-size;
+  // margin-right: $range-thumb-overflow-size;//calc(1.2rem + 2px);// calc(calc(calc(#{$range-thumb-width} / 2) + #{$range-thumb-overflow-size}) + #{$range-thumb-border-width});
+
+  // box-shadow: $range-thumb-box-shadow;
+  cursor: $range-thumb-cursor;
+
+  box-sizing: border-box;
+  border-radius: $range-thumb-border-radius;
+
+  &:hover,
+  &:focus,
+  &:active {
+    // background: $range-thumb-background-active;
+  }
+
+}

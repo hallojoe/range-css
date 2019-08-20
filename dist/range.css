@@ -1,0 +1,176 @@
+:root {
+  font-size: 16px;
+  --range-track-width: 100%;
+  --range-track-height: 2rem;
+  --range-track-background: #fff;
+  --range-track-background-focus: #fff;
+  --range-track-border-width: 0.2rem;
+  --range-track-border-style: solid;
+  --range-track-border-color: green;
+  --range-track-border-top-width: var(--range-track-border-width);
+  --range-track-border-right-width: var(--range-track-border-width);
+  --range-track-border-bottom-width: var(--range-track-border-width);
+  --range-track-border-left-width: var(--range-track-border-width);
+  --range-track-border-radius: 0.25rem;
+  --range-track-border-radius-left: var(--range-track-border-radius);
+  --range-track-border-radius-right: var(--range-track-border-radius);
+  --range-thumb-width: 4rem;
+  --range-thumb-height: 4rem;
+  --range-thumb-background: green;
+  --range-thumb-background-active: green;
+  --range-thumb-border-width: 0.8rem;
+  --range-thumb-border-style: solid;
+  --range-thumb-border-color: rgba(0, 0, 255, 0.5);
+  --range-thumb-overflow-size: 0.5rem;
+  --range-thumb-border-radius: 50%;
+  --range-thumb-cursor: pointer; }
+
+input[type="range"] {
+  width: 100%;
+  height: 4rem;
+  width: var(--range-track-width);
+  height: var(--range-thumb-height);
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+  input[type="range"]:focus {
+    outline: none; }
+
+input[type="range"] {
+  -webkit-appearance: none; }
+  @supports (-webkit-box-reflect: unset) {
+    input[type="range"] {
+      --range-thumb-margin-top: calc(calc(-1 * calc(calc(var(--range-thumb-height) - var(--range-track-height)) / 2)) - var(--range-track-border-width)); } }
+  input[type="range"]::-webkit-slider-runnable-track {
+    box-sizing: border-box;
+    width: var(--range-track-width);
+    height: var(--range-track-height);
+    background: var(--range-track-background);
+    border-style: var(--range-track-border-style);
+    border-color: var(--range-track-border-color);
+    border-top-width: var(--range-track-border-top-width);
+    border-right-width: var(--range-track-border-right-width);
+    border-bottom-width: var(--range-track-border-bottom-width);
+    border-left-width: var(--range-track-border-left-width);
+    border-top-left-radius: var(--range-track-border-radius-left);
+    border-bottom-left-radius: var(--range-track-border-radius-left);
+    border-top-right-radius: var(--range-track-border-radius-right);
+    border-bottom-right-radius: var(--range-track-border-radius-right); }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin-top: var(--range-thumb-margin-top);
+    border: var(--range-thumb-border);
+    width: var(--range-thumb-width);
+    height: var(--range-thumb-height);
+    border-radius: var(--range-thumb-border-radius);
+    background: var(--range-thumb-background);
+    background-size: 100% 100%;
+    border-width: var(--range-thumb-border-width);
+    border-style: var(--range-thumb-border-style);
+    border-color: var(--range-thumb-border-color);
+    box-sizing: border-box;
+    cursor: var(--range-thumb-cursor); }
+  input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: var(--range-track-background-focus); }
+
+input[type="range"] {
+  box-sizing: border-box; }
+  @supports (-moz-appearance: none) {
+    input[type="range"] {
+      border: 1px solid transparent; } }
+  input[type="range"]::-moz-range-track {
+    box-sizing: border-box;
+    width: var(--range-track-width);
+    height: var(--range-track-height);
+    background: var(--range-track-background);
+    border-style: var(--range-track-border-style);
+    border-color: var(--range-track-border-color);
+    border-top-width: var(--range-track-border-top-width);
+    border-right-width: var(--range-track-border-right-width);
+    border-bottom-width: var(--range-track-border-bottom-width);
+    border-left-width: var(--range-track-border-left-width);
+    border-top-left-radius: var(--range-track-border-radius-left);
+    border-bottom-left-radius: var(--range-track-border-radius-left);
+    border-top-right-radius: var(--range-track-border-radius-right);
+    border-bottom-right-radius: var(--range-track-border-radius-right); }
+  input[type="range"]::-moz-range-thumb {
+    margin-top: var(--range-thumb-margin-top);
+    border: var(--range-thumb-border);
+    width: var(--range-thumb-width);
+    height: var(--range-thumb-height);
+    border-radius: var(--range-thumb-border-radius);
+    background: var(--range-thumb-background);
+    background-size: 100% 100%;
+    border-width: var(--range-thumb-border-width);
+    border-style: var(--range-thumb-border-style);
+    border-color: var(--range-thumb-border-color);
+    box-sizing: border-box;
+    cursor: var(--range-thumb-cursor); }
+  input[type="range"]:-moz-focusring {
+    outline: 1px solid transparent;
+    outline-offset: -1px; }
+  input[type="range"]::-moz-focus-outer {
+    border: 0; }
+  input[type="range"]:focus::-moz-range-track {
+    background: var(--range-track-background-focus); }
+
+input[type="range"] {
+  width: 100%;
+  box-sizing: border-box; }
+  input[type="range"]::-ms-track {
+    box-sizing: border-box;
+    width: 100%;
+    height: 2rem;
+    background: transparent;
+    border-color: transparent;
+    border-style: none;
+    color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem; }
+    @supports (-ms-ime-align: auto) {
+      input[type="range"]::-ms-track {
+        margin: auto; } }
+  input[type="range"]::-ms-tooltip {
+    display: none; }
+  input[type="range"]::-ms-fill-lower {
+    box-sizing: border-box;
+    background: #fff;
+    border-width: 0.2rem;
+    border-style: solid;
+    border-right-style: none;
+    border-color: green;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem; }
+    input[type="range"]::-ms-fill-lower:focus {
+      background: #fff; }
+  input[type="range"]::-ms-fill-upper {
+    box-sizing: border-box;
+    background: #fff;
+    border-width: 0.2rem;
+    border-style: solid;
+    border-left-style: none;
+    border-color: green;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem; }
+    input[type="range"]::-ms-fill-upper:focus {
+      background: #fff; }
+  input[type="range"]::-ms-thumb {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.25rem;
+    background: green;
+    background-size: 100% 100%;
+    border-width: 0.8rem;
+    border-style: solid;
+    border-color: rgba(0, 0, 255, 0.5);
+    margin: 0 3px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 50%; }
+    @supports (-ms-ime-align: auto) {
+      input[type="range"]::-ms-thumb {
+        margin-top: 0;
+        margin-bottom: 0; } }

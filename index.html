@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/dist/style.css">
+  <title>lookool - kool looking html and css things</title>
+</head>
+
+<body>
+  <div class="flex">
+    <div class="">
+      <textarea id="variables">
+          font-size: 16px;
+          --range-track-width: 100%;
+          --range-track-height: 2rem;
+          --range-track-background: #fff;
+          --range-track-background-focus: #fff;
+          --range-track-border-width: 3px;
+          --range-track-border-style: dashed;
+          --range-track-border-color: green;
+          --range-track-border-top-width: var(--range-track-border-width);
+          --range-track-border-right-width: var(--range-track-border-width);
+          --range-track-border-bottom-width: var(--range-track-border-width);
+          --range-track-border-left-width: var(--range-track-border-width);
+          --range-track-border-radius: 0.75rem;
+          --range-track-border-radius-left: var(--range-track-border-radius);
+          --range-track-border-radius-right: var(--range-track-border-radius);
+          --range-thumb-width: 3rem;
+          --range-thumb-height: 3rem;
+          --range-thumb-background: url(data:image/svg+xml,%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' ….8,51,255,51s204,91.8,204,204S367.2,459,255,459z'/%3E%3C/g%3E%3C/svg%3E%0A);
+          --range-thumb-background-active: green;
+          --range-thumb-border-width: 1px;
+          --range-thumb-border-style: solid;
+          --range-thumb-border-color: #fff;
+          --range-thumb-overflow-size: 0.5rem;
+          --range-thumb-box-shadow: 0 0 0 0.5rem #ff00dd;
+          --range-thumb-border-radius: 50%;
+          --range-thumb-cursor: pointer;
+          --range-thumb-margin-top: calc(calc(calc(-1 * calc(calc(var(--range-thumb-height) - var(--range-track-height)) / 2)) - var(--range-track-border-width)) + .0rem);      
+        </textarea>
+    </div>
+
+    <div>
+
+        <div class="range-wrap">
+            <input type="range" id="range1" value="100" min="0" max="100" step="1" class="track-small">
+          </div>
+           
+    </div>
+
+
+
+  </div>
+
+  <script>
+
+
+    function handleChangeVariables(event) {
+      if (event.target.id !== 'variables') return false;
+      event.target.value.split(';').forEach(v => {
+        if (v && ~v.indexOf(':')) {
+          var kv = v.trim().split(':');
+          if(kv.length === 2) document.body.style.setProperty(kv[0], kv[1].trim());
+        }
+      });
+    }
+
+    document.addEventListener('input', handleChangeVariables, true);
+
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>

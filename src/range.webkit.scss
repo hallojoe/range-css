@@ -1,0 +1,29 @@
+@import "_variables";
+@import "_functions.scss";
+@import "_mixins.scss";
+
+
+
+input[type="range"] {
+
+  -webkit-appearance: none;
+ 
+  @supports (-webkit-box-reflect:unset) {
+      --range-thumb-margin-top: calc(calc(-1 * calc(calc(var(--range-thumb-height) - var(--range-track-height)) / 2)) - var(--range-track-border-width));
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include range-track();
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @include range-thumb();
+  }
+
+  &:focus::-webkit-slider-runnable-track {
+    background: var(--range-track-background-focus);
+  }
+
+}
+ 

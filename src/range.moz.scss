@@ -1,0 +1,42 @@
+@import "_variables";
+@import "_functions.scss";
+@import "_mixins.scss";
+
+
+
+input[type="range"] {
+
+  box-sizing: border-box;
+
+  // moz only rules
+  @supports (-moz-appearance: none) {
+    //  fix for FF unable to apply focus style bug
+    //  note: this is fixed as of version 60: https://bugzilla.mozilla.org/show_bug.cgi?id=712130
+    border: 1px solid transparent;    
+
+  }
+
+  &::-moz-range-track {
+    @include range-track();
+    
+  }
+
+  &::-moz-range-thumb {
+    @include range-thumb();
+  }
+
+  // hide the outline behind the border
+  &:-moz-focusring {
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+
+  &:focus::-moz-range-track {
+    background: var(--range-track-background-focus);
+  }
+
+}

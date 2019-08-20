@@ -1,0 +1,22 @@
+//https://github.com/twbs/bootstrap/blob/41fcd13d3e0c96ec3565ead21164d27a2f1b7a4c/scss/_functions.scss#L85
+// Retrieve color Sass maps
+@function color($key: "blue") {
+  @return map-get($colors, $key);
+}
+
+@function theme-color($key: "primary") {
+  @return map-get($theme-colors, $key);
+}
+
+// https://github.com/twbs/bootstrap/blob/41fcd13d3e0c96ec3565ead21164d27a2f1b7a4c/scss/_functions.scss#L74
+// Color contrast
+@function color-yiq($color, $dark: $yiq-text-dark, $light: $yiq-text-light) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+
+  $yiq: (($r * 299) + ($g * 587) + ($b * 114)) / 1000;
+
+  @return if($yiq >= $yiq-contrasted-threshold, $dark, $light);
+}
+

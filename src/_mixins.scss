@@ -1,91 +1,149 @@
-@mixin range-track {
-
-  // note: don't use box shadow on track it self. 
-  // this is because ms uses lower upper model
- 
+@mixin range-track { 
   box-sizing: border-box;
-
   width: var(--range-track-width);
   height: var(--range-track-height);
-
   background: var(--range-track-background);
-
   border-style: var(--range-track-border-style);
   border-color: var(--range-track-border-color);
-
-  border-top-width: var(--range-track-border-top-width);
-  border-right-width: var(--range-track-border-right-width);
-  border-bottom-width: var(--range-track-border-bottom-width);
-  border-left-width: var(--range-track-border-left-width);
-
-  border-top-left-radius: var(--range-track-border-radius-left);
-  border-bottom-left-radius: var(--range-track-border-radius-left);
-  border-top-right-radius: var(--range-track-border-radius-right);
-  border-bottom-right-radius: var(--range-track-border-radius-right);
+  border-width: var(--range-track-border-width);
+  border-radius: var(--range-track-border-radius);
+  box-shadow: var(--range-track-box-shadow);
 }
 
+@mixin range-track-static(
+  $range-track-width, 
+  $range-track-height,
+  $range-track-box-shadow,
+  $range-track-background, 
+  $range-track-border-width,
+  $range-track-border-style,
+  $range-track-border-color,
+  $range-track-border-radius,
+  ) {   
+  box-sizing: border-box;
+  width: $range-track-width;
+  height: $range-track-height;
+  box-shadow: $range-track-box-shadow;
+  background: $range-track-background;
+  border-style: $range-track-border-style;
+  border-color: $range-track-border-color;
+  border-width: $range-track-border-width;
+  border-radius: $range-track-border-radius;
+
+}
+
+
 @mixin range-thumb {
-
-  margin-top: var(--range-thumb-margin-top);
-
-  border: var(--range-thumb-border);
-
+  box-sizing: border-box;
+  box-shadow: var(--range-thumb-box-shadow);
   width: var(--range-thumb-width);
-
   height: var(--range-thumb-height);
-
-  border-radius: var(--range-thumb-border-radius);
-
   background: var(--range-thumb-background);
-
   background-size: $range-thumb-background-size;
 
+  border: var(--range-thumb-border);
+  border-radius: var(--range-thumb-border-radius);
   border-width: var(--range-thumb-border-width);
   border-style: var(--range-thumb-border-style);
   border-color: var(--range-thumb-border-color);
+  margin-top: var(--range-thumb-margin-top);  
+  cursor: var(--range-thumb-cursor);  
 
-  // box-shadow: var(--range-thumb-box-shadow);
-
-  box-sizing: border-box;
-
-  cursor: var(--range-thumb-cursor);
-
-
-  &:hover,
-  &:focus,
-  &:active {
-    // --range-thumb-background: var(--range-thumb-background-active);
+  &:hover, &:active {
+    border-width: var(--range-thumb-border-width-hover);
+    border-style: var(--range-thumb-border-style-hover);
+    border-color: var(--range-thumb-border-color-hover);
+    background: var(--range-thumb-background-hover);
+    box-shadow: var(--range-thumb-box-shadow-hover);
+  }
+  &:focus {
+    border-width: var(--range-thumb-border-width-focus);
+    border-style: var(--range-thumb-border-style-focus);
+    border-color: var(--range-thumb-border-color-focus);
+    background: var(--range-thumb-background-focus);
+    box-shadow: var(--range-thumb-box-shadow-focus);
   }
 }
 
-@mixin range-thumb-ms($height, $width, $radius) {
-
-  width: $width;
-  height: $height;
-  border-radius: $range-track-border-radius;
+@mixin range-thumb-static(
+  $range-thumb-box-shadow,
+  $range-thumb-width,
+  $range-thumb-height,
+  $range-thumb-background,
+  $range-thumb-background-size,
+  $range-thumb-border,
+  $range-thumb-border-radius,
+  $range-thumb-border-width,
+  $range-thumb-border-style,
+  $range-thumb-border-color,
+  $range-thumb-margin-top,  
+  $range-thumb-border-width-hover,
+  $range-thumb-border-style-hover,
+  $range-thumb-border-color-hover,
+  $range-thumb-background-hover,
+  $range-thumb-box-shadow-hover,
+  $range-thumb-border-width-focus,
+  $range-thumb-border-style-focus,
+  $range-thumb-border-color-focus,
+  $range-thumb-background-focus,
+  $range-thumb-box-shadow-focus
+  ) {
+  box-sizing: border-box;
+  box-shadow: $range-thumb-box-shadow;
+  width: $range-thumb-width;
+  height: $range-thumb-height;
   background: $range-thumb-background;
-
   background-size: $range-thumb-background-size;
-
+  border: $range-thumb-border;
+  border-radius: $range-thumb-border-radius;
   border-width: $range-thumb-border-width;
   border-style: $range-thumb-border-style;
   border-color: $range-thumb-border-color;
-
-  margin:0 3px;
-
-  // margin-left:  $range-thumb-overflow-size;
-  // margin-right: $range-thumb-overflow-size;//calc(1.2rem + 2px);// calc(calc(calc(#{$range-thumb-width} / 2) + #{$range-thumb-overflow-size}) + #{$range-thumb-border-width});
-
-  // box-shadow: $range-thumb-box-shadow;
-  cursor: $range-thumb-cursor;
-
-  box-sizing: border-box;
-  border-radius: $range-thumb-border-radius;
-
-  &:hover,
-  &:focus,
-  &:active {
-    // background: $range-thumb-background-active;
+  margin-top: $range-thumb-margin-top;  
+  cursor: $range-thumb-cursor;  
+  &:hover, &:active {
+    border-width: $range-thumb-border-width-hover;
+    border-style: $range-thumb-border-style-hover;
+    border-color: $range-thumb-border-color-hover;
+    background: $range-thumb-background-hover;
+    box-shadow: $range-thumb-box-shadow-hover;
   }
-
+  &:focus {
+    border-width: $range-thumb-border-width-focus;
+    border-style: $range-thumb-border-style-focus;
+    border-color: $range-thumb-border-color-focus;
+    background: $range-thumb-background-focus;
+    box-shadow: $range-thumb-box-shadow-focus;
+  }
 }
+
+// @mixin range-thumb-ms($height, $width, $radius) {
+//   box-sizing: border-box;
+//   box-shadow: $range-thumb-box-shadow;
+//   width: $width;
+//   height: $height;
+//   background: $range-thumb-background;
+//   background-size: $range-thumb-background-size;
+//   border-radius: $range-track-border-radius;
+//   border-width: $range-thumb-border-width;
+//   border-style: $range-thumb-border-style;
+//   border-color: $range-thumb-border-color;
+//   border-radius: $range-thumb-border-radius;  
+//   cursor: $range-thumb-cursor;
+
+
+//   &:hover, &:active {
+//     border-width: $range-thumb-border-width-hover;
+//     border-style: $range-thumb-border-style-hover;
+//     border-color: $range-thumb-border-color-hover;
+//     background: $range-thumb-background-hover;
+//     box-shadow: $range-thumb-box-shadow-hover;
+//   }
+//   &:focus {
+//     border-width: $range-thumb-border-width-focus;
+//     border-style: $range-thumb-border-style-focus;
+//     border-color: $range-thumb-border-color-focus;
+//     background: $range-thumb-background-focus;
+//     box-shadow: $range-thumb-box-shadow-focus;
+//   }
+// }

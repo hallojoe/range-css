@@ -1,29 +1,35 @@
 @import "_variables";
-@import "_functions.scss";
 @import "_mixins.scss";
-
-
 
 input[type="range"] {
 
   -webkit-appearance: none;
- 
+
+  // ensure webkit
+  // this is responsible for aligning the thumb
   @supports (-webkit-box-reflect:unset) {
-      --range-thumb-margin-top: calc(calc(-1 * calc(calc(var(--range-thumb-height) - var(--range-track-height)) / 2)) - var(--range-track-border-width));
+    --range-thumb-margin-top: calc(calc(-1 * calc(calc(calc(var(--range-thumb-height) - var(--range-track-height)) / 2))  - calc(calc(var(--range-track-border-width) * 1) + calc(var(--range-thumb-box-shadow-spread) *0) )));  
   }
 
   &::-webkit-slider-runnable-track {
-    @include range-track();
+    @include range-track();    
   }
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
-    @include range-thumb();
+    @include range-thumb();    
   }
 
   &:focus::-webkit-slider-runnable-track {
     background: var(--range-track-background-focus);
   }
 
+  // helper class for mimicing ms on webkit
+  &.ms {
+    &::-webkit-slider-runnable-track {
+      padding:0 var(--range-thumb-box-shadow-spread);     
+    }
+  }
 }
- 
+
+

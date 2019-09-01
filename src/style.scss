@@ -1,13 +1,12 @@
 @import "_variables";
-@import "_functions.scss";
-
-@import "range.scss";
-
 
 * {
   box-sizing: border-box;
 }
 
+body {
+  background: linear-gradient(180deg,#f0f0f0 0%,#ccc 100%) no-repeat;
+}
 .container {
   min-width: 320px;
   max-width: 320px;
@@ -29,7 +28,7 @@ textarea {
 }
 .flex {
   display: flex;
-  width:100%;
+  width:100%; 
   > * {
     padding:2rem;
     width:100%;
@@ -38,11 +37,12 @@ textarea {
 }
 
 .range-wrap {
-
-  border-radius: 0rem;
-  border: 3px solid rgba($color: red, $alpha: 1);
-  box-shadow: 0 0  .5rem .2rem rgba($color: green, $alpha: .8);
+    border: $range-track-border-width solid #f0f0f0;
+    border-radius: $range-track-border-radius;
+    box-shadow: none;
+    padding: 1rem;
+    background-color: #fff;
+    overflow: visible;
   display: flex;
   overflow: visible;
-
 }

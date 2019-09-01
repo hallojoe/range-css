@@ -1,51 +1,27 @@
 @import "_variables";
-@import "_functions.scss";
 @import "_mixins.scss";
 
-
-
 input[type="range"] {
-  
-  width: $range-track-width;
-  
 
-  box-sizing: border-box;
-
-
-  // edge    
-  @supports (-ms-ime-align: auto) {
-    // margin-top: ($range-track-border-width * 1);
-    // margin-bottom: $range-track-border-width * 1;
-
-  }
-
-  // ms only rules - note: no css variable support
+  // ms only rules - note: no css variable support because of suck!
+  // ms don't allow for css variables in pseudo selctors
   &::-ms-track {
+  
+  // note: don't use box shadow on track it self. 
+  // this is because ms uses lower upper model
+  // and shadow will shine through their intersection
 
     box-sizing: border-box;
-
     width: $range-track-width;
-    height: $range-track-height;
-
-    // todo: include for edge
-    // width: var(--range-track-width);
-    // height: var(--range-track-height);
-    
-    // remove bg color from the track
+    height: $range-track-height;  
     background: transparent;
-    border-color: transparent;
-    border-style: none;
-
-    // remove default tick marks
     color: transparent; 
     border: none;
     outline: none;      
-    margin-top: $range-track-margin-for-ie;
-    margin-bottom:  $range-track-margin-for-ie;
-
+    margin: $range-track-margin-for-ie 0;
     // edge    
     @supports (-ms-ime-align: auto) {
-      margin: auto;
+      margin: $range-track-margin-for-ie 0;
     }    
   }
 
@@ -56,7 +32,6 @@ input[type="range"] {
   // left side of track
   &::-ms-fill-lower {  
     box-sizing: border-box;
-
     background: $range-track-background;
     border-width: $range-track-border-width;
     border-style: $range-track-border-style;
@@ -64,84 +39,64 @@ input[type="range"] {
     border-color: $range-track-border-color;
     border-top-left-radius: $range-track-border-radius;
     border-bottom-left-radius: $range-track-border-radius;
-
- 
-    //margin-left: $range-thumb-overflow-size;
-
-// margin-top: 0;
-
-    // box-shadow: $range-track-box-shadow;
-
-    // compensate for known overflow - in current carse, box-shadow
-    //margin:$range-thumb-overflow-size 0 $range-thumb-overflow-size $range-thumb-overflow-size;
-
     &:focus {
       background: $range-track-background-focus;
     }
   }
+
   // right side of track
   &::-ms-fill-upper {
-
     box-sizing: border-box;
-
     background: $range-track-background;
     border-width: $range-track-border-width;
     border-style: $range-track-border-style;
-
     border-left-style: none;
-
     border-color: $range-track-border-color;
-
     border-top-right-radius: $range-track-border-radius;
-    border-bottom-right-radius: $range-track-border-radius;
-
-    // box-shadow: $range-track-box-shadow;
-
-    // compensate for known overflow - in current carse, box-shadow
-    //margin:$range-thumb-overflow-size $range-thumb-overflow-size $range-thumb-overflow-size 0;
-    //margin-right: $range-thumb-overflow-size;
-    // margin-top: 0!important;
-    
+    border-bottom-right-radius: $range-track-border-radius;  
     &:focus {
       background: $range-track-background-focus;
     }
-
   }
-
-  &::-ms-thumb {
-   
-    @include range-thumb-ms($range-thumb-width, $range-thumb-height, $range-thumb-border-radius);
-
-    // ensure room for box shadow and border-radius if used
-    // when using border-radius weird behavior occours:
-    // when dragging thumb to the edges of the track
-    // the border-radius is changed by thumb presence
-
-    // margin-left:  $range-thumb-overflow-size;
-    // margin-right: $range-thumb-overflow-size; //calc(1.2rem + 2px);// calc(calc(calc(#{$range-thumb-width} / 2) + #{$range-thumb-overflow-size}) + #{$range-thumb-border-width});
-
-
-    // edge and ie measure in "content-box" 
-    // so substract border from width
-    // to nomalize look 
-    // width: $range-thumb-width - ($range-thumb-border-width *2);
-    // height: $range-thumb-height - ($range-thumb-border-width* 2);
-
-    // box-sizing: border-box;
-
-
-
-    //  border-radius: $range-thumb-border-radius;
-
+  
+  &::-ms-thumb {   
+    @include range-thumb-static(
+      $range-thumb-box-shadow,
+      $range-thumb-width,
+      $range-thumb-height,
+      $range-thumb-background,
+      $range-thumb-background-size,
+      $range-thumb-border,
+      $range-thumb-border-radius,
+      $range-thumb-border-width,
+      $range-thumb-border-style,
+      $range-thumb-border-color,
+      0,  
+      $range-thumb-border-width-hover,
+      $range-thumb-border-style-hover,
+      $range-thumb-border-color-hover,
+      $range-thumb-background-hover,
+      $range-thumb-box-shadow-hover,
+      $range-thumb-border-width-focus,
+      $range-thumb-border-style-focus,
+      $range-thumb-border-color-focus,
+      $range-thumb-background-focus,
+      $range-thumb-box-shadow-focus
+    );
+    // ensure room for box shadow
+    margin: 0 $range-thumb-box-shadow-spread;
     // edge 
     @supports (-ms-ime-align: auto) {
       & {
-        margin-top: 0;// $range-thumb-margin-top-ms;
-        margin-bottom: 0;
-        // margin-top: var(--range-thumb-margin-top);
-
+        // ensure room for box shadow
+        padding: $range-thumb-box-shadow-spread !important;
       }
     }
   }
 
+
+//  ::-ms-ticks-before { }
+//  ::-ms-ticks-after { }
+//  ::-ms-thumb:hover { }  
+//  :focus::-ms-track { }
 }

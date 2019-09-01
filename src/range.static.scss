@@ -1,9 +1,8 @@
 @import "_variables";
 @import "_mixins.scss";
-@import "root.scss";
 input[type='range'] {
-  width: var(--range-width);
-  height: calc(var(--range-thumb-height) + calc(var(--range-thumb-box-shadow-spread) * 2));  
+  width: $range-width;
+  height: $range-thumb-height + ($range-thumb-box-shadow-spread * 2);  
   background-color: transparent;
   box-sizing: border-box;
   padding: 0;
@@ -12,7 +11,8 @@ input[type='range'] {
     outline: none;
   }
 } 
-@import "range.webkit.scss";
-@import "range.moz.scss";
+@import "range.static.webkit.scss";
+@import "range.static.moz.scss";
 @import "range.ms.scss";
+
 

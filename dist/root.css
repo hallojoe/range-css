@@ -1,0 +1,92 @@
+/*
+top = (spread - v_shadow + 0.5*blur)
+right = (spread + h_shadow + 0.5*blur)
+bottom = (spread + v_shadow + 0.5*blur)
+left = (spread - h_shadow + 0.5*blur)
+*/
+:root {
+  font-size: 16px;
+  --range-height: auto;
+  --range-width: 100%;
+  --range-track-height: 5px;
+  --range-track-width: 100%;
+  --range-track-background: #fff;
+  --range-track-border-width: 1px;
+  --range-track-border-style: solid;
+  --range-track-border-color: #cccccc;
+  --range-track-border-radius: 2.5px;
+  --range-track-box-shadow-h-offset: 0;
+  --range-track-box-shadow-v-offset: 0;
+  --range-track-box-shadow-blur: 0;
+  --range-track-box-shadow-spread: 0;
+  --range-track-box-shadow-color: rgba(255, 255, 255, 0.6);
+  --range-track-box-shadow: 
+    var(--range-track-box-shadow-h-offset) 
+    var(--range-track-box-shadow-v-offset) 
+    var(--range-track-box-shadow-blur) 
+    var(--range-track-box-shadow-spread) 
+    var(--range-track-box-shadow-color);
+  --range-track-background-focus: #fff;
+  --range-track-border-width-focus: 1px;
+  --range-track-border-style-focus: solid;
+  --range-track-border-color-focus: #cccccc;
+  --range-track-box-shadow-h-offset-focus: 0;
+  --range-track-box-shadow-v-offset-focus: 0;
+  --range-track-box-shadow-blur-focus: 0;
+  --range-track-box-shadow-spread-focus: 0;
+  --range-track-box-shadow-color-focus: rgba(255, 255, 255, 0.6);
+  --range-track-box-shadow-focus: 
+    var(--range-track-box-shadow-h-offset-focus) 
+    var(--range-track-box-shadow-v-offset-focus) 
+    var(--range-track-box-shadow-blur-focus) 
+    var(--range-track-box-shadow-spread-focus) 
+    var(--range-track-box-shadow-color-focus);
+  --range-thumb-width: 24px;
+  --range-thumb-height: 24px;
+  --range-thumb-background: green;
+  --range-thumb-border-width: 1px;
+  --range-thumb-border-style: solid;
+  --range-thumb-border-color: #fff;
+  --range-thumb-border-radius: 50%;
+  --range-thumb-cursor: pointer;
+  --range-thumb-box-shadow-h-offset: 0;
+  --range-thumb-box-shadow-v-offset: 0;
+  --range-thumb-box-shadow-blur: 0;
+  --range-thumb-box-shadow-spread: 3px;
+  --range-thumb-box-shadow-color: rgba(0, 128, 0, 0.6);
+  --range-thumb-box-shadow-hover: 
+    var(--range-thumb-box-shadow-h-offset) 
+    var(--range-thumb-box-shadow-v-offset) 
+    var(--range-thumb-box-shadow-blur) 
+    var(--range-thumb-box-shadow-spread) 
+    var(--range-thumb-box-shadow-color);
+  --range-thumb-background-focus: #004d00;
+  --range-thumb-border-width-focus: 1px;
+  --range-thumb-border-style-focus: solid;
+  --range-thumb-border-color-focus: green;
+  --range-thumb-box-shadow-h-offset-focus: 0;
+  --range-thumb-box-shadow-v-offset-focus: 0;
+  --range-thumb-box-shadow-blur-focus: 0;
+  --range-thumb-box-shadow-spread-focus: 3px;
+  --range-thumb-box-shadow-color-focus: rgba(0, 128, 0, 0.6);
+  --range-thumb-box-shadow: 
+    var(--range-thumb-box-shadow-h-offset-focus) 
+    var(--range-thumb-box-shadow-v-offset-focus) 
+    var(--range-thumb-box-shadow-blur-focus) 
+    var(--range-thumb-box-shadow-spread-focus) 
+    var(--range-thumb-box-shadow-color-focus);
+  --range-thumb-background-hover: #004d00;
+  --range-thumb-border-width-hover: 1px;
+  --range-thumb-border-style-hover: solid;
+  --range-thumb-border-color-hover: #e6e6e6;
+  --range-thumb-box-shadow-h-offset-hover: 0;
+  --range-thumb-box-shadow-v-offset-hover: 0;
+  --range-thumb-box-shadow-blur-hover: 0;
+  --range-thumb-box-shadow-spread-hover: 3px;
+  --range-thumb-box-shadow-color-hover: rgba(0, 77, 0, 0.6);
+  --range-thumb-box-shadow: 
+    var(--range-thumb-box-shadow-h-offset-hover) 
+    var(--range-thumb-box-shadow-v-offset-hover) 
+    var(--range-thumb-box-shadow-blur-hover) 
+    var(--range-thumb-box-shadow-spread-hover) 
+    var(--range-thumb-box-shadow-color-hover); }

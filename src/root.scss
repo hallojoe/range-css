@@ -1,0 +1,106 @@
+@import "_variables";
+
+:root {
+
+  font-size: 16px;
+
+  // input
+  // =====
+  --range-height: #{$range-height};
+  --range-width: #{$range-width};
+
+  // track
+  // =====
+  --range-track-height: #{$range-track-height};
+  --range-track-width: #{$range-track-width};  
+  --range-track-background: #{$range-track-background};
+  --range-track-border-width: #{$range-track-border-width};
+  --range-track-border-style: #{$range-track-border-style};
+  --range-track-border-color: #{$range-track-border-color};
+  --range-track-border-radius: #{$range-track-border-radius};
+  --range-track-box-shadow-h-offset: #{$range-track-box-shadow-h-offset};
+  --range-track-box-shadow-v-offset: #{$range-track-box-shadow-v-offset};
+  --range-track-box-shadow-blur: #{$range-track-box-shadow-blur};
+  --range-track-box-shadow-spread: #{$range-track-box-shadow-spread};
+  --range-track-box-shadow-color: #{$range-track-box-shadow-color};
+  --range-track-box-shadow: 
+    var(--range-track-box-shadow-h-offset) 
+    var(--range-track-box-shadow-v-offset) 
+    var(--range-track-box-shadow-blur) 
+    var(--range-track-box-shadow-spread) 
+    var(--range-track-box-shadow-color);
+
+  // track pseudo
+  // ============
+  --range-track-background-focus: #{$range-track-background-focus};
+  --range-track-border-width-focus: #{$range-track-border-width-focus};
+  --range-track-border-style-focus: #{$range-track-border-style-focus};
+  --range-track-border-color-focus: #{$range-track-border-color-focus};
+  --range-track-box-shadow-h-offset-focus: #{$range-track-box-shadow-h-offset-focus};
+  --range-track-box-shadow-v-offset-focus: #{$range-track-box-shadow-v-offset-focus};
+  --range-track-box-shadow-blur-focus: #{$range-track-box-shadow-blur-focus};
+  --range-track-box-shadow-spread-focus: #{$range-track-box-shadow-spread-focus};
+  --range-track-box-shadow-color-focus: #{$range-track-box-shadow-color-focus};
+  --range-track-box-shadow-focus: 
+    var(--range-track-box-shadow-h-offset-focus) 
+    var(--range-track-box-shadow-v-offset-focus) 
+    var(--range-track-box-shadow-blur-focus) 
+    var(--range-track-box-shadow-spread-focus) 
+    var(--range-track-box-shadow-color-focus);
+  
+  // thumb
+  // =====
+  --range-thumb-width: #{$range-thumb-width};
+  --range-thumb-height: #{$range-thumb-height}; 
+  --range-thumb-background: #{$range-thumb-background};  
+  --range-thumb-border-width: #{$range-thumb-border-width};
+  --range-thumb-border-style: #{$range-thumb-border-style};
+  --range-thumb-border-color: #{$range-thumb-border-color};
+  --range-thumb-border-radius: #{$range-thumb-border-radius};
+  --range-thumb-cursor: #{$range-thumb-cursor};
+  --range-thumb-box-shadow-h-offset: #{$range-thumb-box-shadow-h-offset};
+  --range-thumb-box-shadow-v-offset: #{$range-thumb-box-shadow-v-offset};
+  --range-thumb-box-shadow-blur: #{$range-thumb-box-shadow-blur};
+  --range-thumb-box-shadow-spread: #{$range-thumb-box-shadow-spread};
+  --range-thumb-box-shadow-color: #{$range-thumb-box-shadow-color};
+  --range-thumb-box-shadow-hover: 
+    var(--range-thumb-box-shadow-h-offset) 
+    var(--range-thumb-box-shadow-v-offset) 
+    var(--range-thumb-box-shadow-blur) 
+    var(--range-thumb-box-shadow-spread) 
+    var(--range-thumb-box-shadow-color);
+
+  // thumb pseudo
+  // ============
+  --range-thumb-background-focus: #{$range-thumb-background-focus};
+  --range-thumb-border-width-focus: #{$range-thumb-border-width-focus};
+  --range-thumb-border-style-focus: #{$range-thumb-border-style-focus};
+  --range-thumb-border-color-focus: #{$range-thumb-border-color-focus};
+  --range-thumb-box-shadow-h-offset-focus: #{$range-thumb-box-shadow-h-offset-focus};
+  --range-thumb-box-shadow-v-offset-focus: #{$range-thumb-box-shadow-v-offset-focus};
+  --range-thumb-box-shadow-blur-focus: #{$range-thumb-box-shadow-blur-focus};
+  --range-thumb-box-shadow-spread-focus: #{$range-thumb-box-shadow-spread-focus};
+  --range-thumb-box-shadow-color-focus: #{$range-thumb-box-shadow-color-focus};
+  --range-thumb-box-shadow: 
+    var(--range-thumb-box-shadow-h-offset-focus) 
+    var(--range-thumb-box-shadow-v-offset-focus) 
+    var(--range-thumb-box-shadow-blur-focus) 
+    var(--range-thumb-box-shadow-spread-focus) 
+    var(--range-thumb-box-shadow-color-focus);
+    
+  --range-thumb-background-hover: #{$range-thumb-background-hover};
+  --range-thumb-border-width-hover: #{$range-thumb-border-width-hover};
+  --range-thumb-border-style-hover: #{$range-thumb-border-style-hover};
+  --range-thumb-border-color-hover: #{$range-thumb-border-color-hover};
+  --range-thumb-box-shadow-h-offset-hover: #{$range-thumb-box-shadow-h-offset-hover};
+  --range-thumb-box-shadow-v-offset-hover: #{$range-thumb-box-shadow-v-offset-hover};
+  --range-thumb-box-shadow-blur-hover: #{$range-thumb-box-shadow-blur-hover};
+  --range-thumb-box-shadow-spread-hover: #{$range-thumb-box-shadow-spread-hover};
+  --range-thumb-box-shadow-color-hover: #{$range-thumb-box-shadow-color-hover};
+  --range-thumb-box-shadow: 
+    var(--range-thumb-box-shadow-h-offset-hover) 
+    var(--range-thumb-box-shadow-v-offset-hover) 
+    var(--range-thumb-box-shadow-blur-hover) 
+    var(--range-thumb-box-shadow-spread-hover) 
+    var(--range-thumb-box-shadow-color-hover);
+}

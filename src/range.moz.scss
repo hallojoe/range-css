@@ -1,42 +1,51 @@
 @import "_variables";
-@import "_functions.scss";
 @import "_mixins.scss";
 
+// moz rules
+input[type='range'] {
 
-
-input[type="range"] {
-
-  box-sizing: border-box;
-
-  // moz only rules
+  // ensure moz
   @supports (-moz-appearance: none) {
-    //  fix for FF unable to apply focus style bug
-    //  note: this is fixed as of version 60: https://bugzilla.mozilla.org/show_bug.cgi?id=712130
-    border: 1px solid transparent;    
-
+    // fix for FF unable to apply focus style bug
+    // note: this is fixed as of version 60: https://bugzilla.mozilla.org/show_bug.cgi?id=712130
+    // as per 2019-08-21 FF is at 68 - outcommented in favor of using border for mimicing ms
+    // border: 1px solid transparent;    
   }
-
+  
   &::-moz-range-track {
-    @include range-track();
-    
+    @include range-track();    
   }
 
-  &::-moz-range-thumb {
+  &::-moz-range-thumb {    
     @include range-thumb();
   }
 
   // hide the outline behind the border
   &:-moz-focusring {
     outline: 1px solid transparent;
-    outline-offset: -1px;
+    outline-offset: -1px;  
   }
 
   &::-moz-focus-outer {
-    border: 0;
+    border: 0;  
   }
 
   &:focus::-moz-range-track {
-    background: var(--range-track-background-focus);
+    background: var(--range-track-background-focus);  
   }
+  
+  // helper class for mimicing ms on moz
+  &.ms {
+    @supports (-moz-appearance: none) {
+      // mimic ms
+      border-right: var(--range-thumb-box-shadow-spread) solid transparent;
+      border-left: var(--range-thumb-box-shadow-spread) solid transparent;
+      max-width:100%;
+    }
+    &::-moz-range-track {
+      // add extra width to track to get it to expand over border-left and right
+      width:calc(100% + calc(var(--range-thumb-box-shadow-spread) * 2));
+    }
 
+  }
 }
